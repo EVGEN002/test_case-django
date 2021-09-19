@@ -27,3 +27,9 @@ urlpatterns += [
     path('', include('human.urls')),
     path('', include('match.urls')),
 ]
+
+from django.views.generic import RedirectView
+
+urlpatterns += [
+    path('', RedirectView.as_view(url='/api/human/', permanent=True)),
+]
